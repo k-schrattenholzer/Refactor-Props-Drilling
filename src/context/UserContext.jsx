@@ -5,7 +5,17 @@ const UserContext = createContext();
 
 //Create the UserProviderComponent that takes children
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState({});
+
+  useEffect(() => {
+    fetchUser()
+      .then((fetchedUser) => {
+        setUser(fetchedUser)
+      })
+      .catch((error) => {
+        throw new Error(`Error: ${error}`)
+      })
+  }, [])
 
   return <UserContext.Provider value={{ user, setUser }}>{children}</UserContext.Provider>
 }
