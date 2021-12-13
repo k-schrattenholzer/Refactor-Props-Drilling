@@ -1,5 +1,6 @@
 {
   "workbench.colorCustomizations": {
     "titleBar.activeBackground": "#15645e7a"
-  }
+  },
+  "vscode-pets.theme": "castle"
 }
