@@ -1,11 +1,11 @@
-import { useContext, createContext, useState} from 'react';
+import { useContext, createContext, useState } from 'react'
 
 //Create the Context
-const UserContext = createContext();
+const UserContext = createContext()
 
 //Create the UserProviderComponent that takes children
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({})
 
   useEffect(() => {
     fetchUser()
@@ -22,7 +22,7 @@ const UserProvider = ({ children }) => {
 
 //Create the custom hook
 const useUser = () => {
-  const context = useContext(UserContext);
+  const context = useContext(UserContext)
 
   if (context === undefined) {
     throw new error('the useUser hook cant be called outside of the UserContext Provider')
@@ -32,3 +32,5 @@ const useUser = () => {
 }
 
 //Export the provider component and the custom hook
+
+export { UserProvider, UserContext }
