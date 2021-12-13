@@ -7,7 +7,8 @@ import { fetchUser } from './services/user'
 function App() {
   // inital value should match the data type of end value
   //will replace with useUser and update the setUser to match the custom hook we create
-  f
+  
+  
   const [user, setUser] = useState({})
 
   useEffect(() => {
